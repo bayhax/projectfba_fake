@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.home',  # 主页
     'apps.blog',  # 博客页
-    'projectfba_fake_fronted',  # vue前端页面
 ]
 
 MIDDLEWARE = [
