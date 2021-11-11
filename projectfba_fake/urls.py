@@ -20,7 +20,7 @@ from django.views.generic import TemplateView
 from apps import home
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('pro_manage/', admin.site.urls),
     re_path(r'^', include('home.urls')),  # 首页连接
     re_path(r'^$', TemplateView.as_view(template_name="index.html")),
 ]

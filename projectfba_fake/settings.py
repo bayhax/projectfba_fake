@@ -110,6 +110,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# 富文本编辑器配置
+TINYMCE_DEFAULT_CONFIG = {
+    'selector': 'textarea',
+    'language': 'zh_CN',
+    'theme': 'modern',
+    'plugins': 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link '
+               'media template code codesample table charmap hr pagebreak nonbreaking anchor insertdatetime advlist '
+               'lists wordcount imagetools textpattern help emoticons autosave autoresize textcolor',
+    'toolbar': 'fontselect fontsizeselect forecolor backcolor | image undo redo restoredraft | cut copy paste '
+               'pastetext | outdent indent bullist numlist | blockquote subscript superscript removeformat | charmap '
+               'emoticons hr pagebreak insertdatetime print preview | code fullscreen',
+    'images_upload_url': '/home/upload_image',
+    'images_reuse_filename': 'true',
+    'width': 800,
+    'height': 1000,
+}
+
 # 自定义django用户系统
 # AUTH_USER_MODEL = "projectfba_fake.User"
 # AUTHENTICATION_BACKENDS = ('projectfba_fake.views.CustomBackend',)
