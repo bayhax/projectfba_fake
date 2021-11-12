@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.home',  # 主页
-    'apps.blog',  # 博客页
+    'tinymce',  # 富文本编辑器
+    'home',  # 主页
+    'blog',  # 博客页
 ]
 
 MIDDLEWARE = [
@@ -80,16 +81,16 @@ WSGI_APPLICATION = 'projectfba_fake.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': '',
-#         'USER': 'root',
-#         'PASSWORD': '',
-#         'HOST': '',
-#         'PORT': 3306,
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'guide',
+        'USER': 'root',
+        'PASSWORD': 'P@ssw0rd1',
+        'HOST': 'localhost',
+        'PORT': 3306,
+    }
+}
 
 
 # Password validation
@@ -114,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 TINYMCE_DEFAULT_CONFIG = {
     'selector': 'textarea',
     'language': 'zh_CN',
-    'theme': 'modern',
+    'theme': 'silver',
     'plugins': 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link '
                'media template code codesample table charmap hr pagebreak nonbreaking anchor insertdatetime advlist '
                'lists wordcount imagetools textpattern help emoticons autosave autoresize textcolor',
@@ -124,7 +125,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'images_upload_url': '/home/upload_image',
     'images_reuse_filename': 'true',
     'width': 800,
-    'height': 1000,
+    'height': 2000,
 }
 
 # 自定义django用户系统
@@ -149,6 +150,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'apps/home/static')]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

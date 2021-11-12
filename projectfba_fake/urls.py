@@ -13,14 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, re_path, include
 from django.views.generic import TemplateView
+from projectfba_fake import settings
 
 from apps import home
 
 urlpatterns = [
     path('pro_manage/', admin.site.urls),
+    path('tinymce', include('tinymce.urls')),  # 富文本编辑器
     re_path(r'^', include('home.urls')),  # 首页连接
     re_path(r'^$', TemplateView.as_view(template_name="index.html")),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
