@@ -12,6 +12,8 @@ class Blogs(BaseModel):
     """行业资讯表"""
     objects = models.Manager()
     title = models.CharField(max_length=50, verbose_name='标题')
+    description = models.CharField(default='', max_length=1024, verbose_name='文章描述')
+    keywords = models.CharField(default='', max_length=1024, verbose_name='关键词')
     content = HTMLField(verbose_name='博客内容')
     img = ImageField(upload_to='img/news')
     add_date = models.DateTimeField(default=timezone.now, verbose_name='保存日期')
