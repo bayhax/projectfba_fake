@@ -24,6 +24,7 @@ from apps import home
 urlpatterns = [
     path('pro_manage/', admin.site.urls),
     path('tinymce', include('tinymce.urls')),  # 富文本编辑器
+    path('blog/', include('blog.urls')),  # 博客信息
     re_path(r'^', include('home.urls')),  # 首页连接
     re_path(r'^$', TemplateView.as_view(template_name="index.html")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

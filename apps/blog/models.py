@@ -20,6 +20,6 @@ class Blogs(BaseModel):
     mod_date = models.DateTimeField(auto_now=True, verbose_name='修改日期')
 
     class Meta:
-        db_table = 'news'
+        db_table = 'blog'
         verbose_name = '博客表'
         verbose_name_plural = verbose_name
