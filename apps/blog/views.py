@@ -15,9 +15,10 @@ class BlogView(View):
         blog_id = request.GET['blog_id']
         blog_id = int(blog_id)
         blog = Blogs.objects.get(id=blog_id)
-        return HttpResponse(json.dumps({'mod_date': datetime.datetime.strftime(blog.mod_date, '%Y-%m-%d'),
-                                        'title': blog.title, 'description': blog.description, 'keyword': blog.keywords,
-                                        'content': blog.content, }), content_type="application/json, charset=utf-8")
+        return HttpResponse(json.dumps({'blog_date': datetime.datetime.strftime(blog.mod_date, '%Y-%m-%d'),
+                                        'blog_title': blog.title, 'blog_author': blog.author,
+                                        'blog_description': blog.description, 'blog_keyword': blog.keywords,
+                                        'blog_content': blog.content}), content_type="application/json, charset=utf-8")
 
     def post(self, request):
         pass
